@@ -1,0 +1,57 @@
+.area-input-textarea {
+	margin: auto;
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	resize: both;
+}
+
+.left-input-textarea {
+	font-family: 'Nunito', sans-serif;
+	padding: 10px
+	width: 100%;
+	margin-left: 10px;
+	margin-right: 100px;
+	height: 100px;
+
+	border: 3px solid #cccccc;
+	padding: 10px;
+	background-position: top right;
+	
+	font-size:16px;
+	border-color:#cccccc;
+	background-color:#ffffff;
+	border-style:dashed;
+	border-width:4px;
+	box-shadow: 0px 0px 26px 0px
+	rgba(42,42,42,.75);
+	border-radius:13px;
+	padding:6px;
+
+}
+
+.right-input-textarea {
+	font-family: 'Nunito', sans-serif;
+	padding: 10px
+	width: 100%;
+	margin-left: 100px;
+	margin-right: 10px;
+	height: 100px;
+
+	border: 3px solid #cccccc;
+	padding: 10px;
+	background-position: top right;
+
+	font-size:16px;
+	border-color:#cccccc;
+	background-color:#ffffff;
+	border-style:dashed;
+	border-width:4px;
+	box-shadow: 0px 0px 26px 0px
+	rgba(42,42,42,.75);
+	border-radius:13px;
+	padding:6px;
+} 
+
+.left-input-textarea:focus { outline:none; } 
+.right-input-textarea:focus { outline:none; } 
