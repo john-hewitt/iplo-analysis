@@ -25,6 +25,8 @@ function draw_graph(data){
 		}
 	}
 
+	var maxLogMagnitude = Math.max(Math.abs(maxLog), Math.abs(minLog));
+
 	console.log(jsData);
 
 	var body = d3.select("body");
@@ -46,16 +48,16 @@ function draw_graph(data){
 					.range([width*0.2, width*0.8]);
 
 	var radiusScale = d3.scaleLinear()
-					.domain([0, 100])
-					.range([15, 150]);
+					.domain([0, maxLogMagnitude])
+					.range([15, 25]);
 
 	var opacityScale = d3.scaleLinear()
-					   .domain([0, 15])
-					   .range([0.1, 0.9]);
+					   .domain([0, maxLogMagnitude])
+					   .range([0.1, 0.5]);
 
 	var fontSizeScale = d3.scaleLinear()
-						.domain([0, 15])
-						.range([10, 100]);
+						.domain([0, maxLogMagnitude])
+						.range([10, 20]);
 
 	var xAxis = d3.axisBottom()
 				.scale(frequencyScale)
@@ -74,10 +76,13 @@ function draw_graph(data){
 				  		.append("circle")
 				  		.attr("cy", function(d){return logScale(d.value[0])})
 				  		.attr("cx", function(d){return frequencyScale(d.value[1])})
-				  		.attr("r", function(d){return radiusScale(d.value[1])})
+				  		.attr("r", function(d){return radiusScale(Math.abs(d.value[0]))})
 				   		.attr("fill", function(d){if (d.value[0] > 0) return color1;
 				   								  else return color2;})
-				   		.attr("opacity", function(d){return opacityScale(Math.abs(d.value[0]))});
+				   		.attr("opacity", function(d){if(Math.abs(d.value[0]) < 0.5*maxLogMagnitude &&
+				   			Math.abs(d.value[0]) < 1.96) return 0;
+				   		 else return opacityScale(Math.abs(d.value[0]))})
+				   		.a
 
 	var labels = canvas.selectAll("text")
 				 .data(jsData)
@@ -87,14 +92,16 @@ function draw_graph(data){
 				 		.attr("x", function(d){return frequencyScale(d.value[1])})
 				 		.attr("fill", function(d){if (d.value[0] > 0) return color1;
 				   								  else return color2;})
-				 		.attr("opacity", function(d){return 1.5*opacityScale(Math.abs(d.value[0]))})
+				 		.attr("opacity", function(d){if(Math.abs(d.value[0]) < 0.5*maxLogMagnitude &&
+				 			Math.abs(d.value[0]) < 1.96) return 0;
+				   		 else return 1.5*opacityScale(Math.abs(d.value[0]))})
 				 		.attr("font-size", function(d){return fontSizeScale(Math.abs(d.value[0])) + "px"})
 				 		.attr("text-anchor", "middle")
 				 		.attr("dy", ".3em")
 				 		.text(function(d){return d.key})
 
 	canvas.append("g")
-			.attr("transform", "translate(0, 550)")
+			.attr("transform", "translate(0," + height/2 + ")")
 			.attr("opacity", 0.4)
 			.call(xAxis);
 

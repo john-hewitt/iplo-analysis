@@ -1,0 +1,34 @@
+html, body {
+	height: 100%;
+}
+
+.window-background{
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.background{
+	background-image: url('../images/background.jpg');
+	filter: blur(5px);
+  	height: 100%;
+  	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title {
+	font-family: 'Nunito', sans-serif;
+	margin: auto;
+	text-align: center;
+	padding: 10px
+	width: 100%;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 50px;
+	margin-bottom: 200px;
+  	overflow: auto;
+}

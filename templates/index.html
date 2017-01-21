@@ -2,26 +2,61 @@
 <html>
 <head>
 <title>Our Amazing App</title>
+<link rel="stylesheet" href="../static/style.css">
+<link rel="stylesheet" href="../static/foundation.css">
+<link rel="stylesheet" href="../static/area-text.css">
+<link rel="stylesheet" href="../static/button.css">
 <script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
+<!-- <div class = "background"></div> -->
 
 <body>
-<h1> TITLE! </h1>
-<h2> Header2 </h2>
-<form action="/" method="POST">
+	<div class = "window-background">
 
-	<textarea name="text1" rows="15" cols="50" maxlength="100000000">Paste in here text body 1.</textarea>
-	<br><br>
-	<textarea name="text2" rows="15" cols="50" maxlength="100000000">Paste in here text body 2.</textarea>
-	<input type="submit" value="Submit">
-</form>
-<!-- 
-{% if results != None %}
-  {{results}}
-{% endif %}
- -->
+	<h1 class="title">Our Amazing Incredible App!</h1>	
+
+    <div class="switch-field">
+      <div class="switch-title">Input Source</div>
+      <input type="radio" id="switch_left" name="switch_2" value="plaintext" checked/>
+      <label for="switch_left">Plaintext</label>
+      <input type="radio" id="switch_right" name="switch_2" value="twitter" />
+      <label for="switch_right">Twitter</label>
+    </div>
+
+	<form action="/" method="POST">
+		<div class="area-input" id="plain">
+		<textarea class="left-input" name="text1" placeholder="paste text 1 here" rows="15" cols="50" maxlength="100000000"></textarea>
+		<textarea class="right-input" name="text2" placeholder="paste text 2 here" rows="15" cols="50" maxlength="100000000"></textarea>
+		<br>
+		<br>
+		<input type="submit" value="Submit" name="plaintext_submit">
+		</div>
+	</form>
+
+	<form action="/" method="POST">
+		<div class="area-input" id="twitter">
+		<input type="text" name="text1" placeholder="twitter username 1"></input>
+		<input type="text" name="text2" placeholder="twitter username 2"></input>
+		<input type="submit" value="Submit" name="twitter_submit">
+		<div class="area-input-textarea">
+		<textarea class="left-input-textarea" name="textarea" rows="15" cols="50">Paste in here text body 1.</textarea>
+
+		<textarea class="right-input-textarea" name="textarea" rows="15" cols="50">Pawst in here text body 2.</textarea>
+		</div>
+
+		<div class = "submit-button-wrapper">
+		<button type = "button" class="submit-button">Submit
+		</div>
+	</form>
+
+
+	</div>
 </body>
-<script type="text/javascript" src="static/d3.js"></script>
+<script type="text/javascript" src="../static/script.js"></script>
+<!-- <div class = "background"></div> -->
+<script type="text/javascript" src="../static/d3.js"></script>
 <script> draw_graph({{ results|tojson }}) </script>
+
 </html>
