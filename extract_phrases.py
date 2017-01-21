@@ -103,6 +103,13 @@ def ratios(filename):
     return filtered_dict 
     
 
+'''
+Brittle method to return a Phrasifier trained off of wikipedia
+stored at a specific location.
+'''
+def get_default_phrasifier():
+    return Phrasifier('resources/wiki_title_2grams.tsv')
+
 class Phrasifier():
     '''
     Takes the path to a TSV of word1<TAB>word2,
