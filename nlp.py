@@ -2,6 +2,7 @@ from flask import Flask, request, render_template
 import custom_tokenize
 import logodds
 import extract_phrases
+import sys
 
 app = Flask(__name__)
 
@@ -23,7 +24,7 @@ def index():
 		print phrases1
 		print phrases2
 		print "results"
-		results = logodds.get_analysis(phrases1, phrases2)
+		results = logodds.get_analysis(phrases1, phrases2, large_prior)
 		print results
 		return render_template("index.html", results=results)
 	else:
@@ -33,5 +34,8 @@ def loganalysis(text1, text2):
 	return text1 + ' ' + text2
 
 if __name__ == "__main__":
+        print >> sys.stderr, "loading phrasifier..."
 	phrasifier = extract_phrases.get_default_phrasifier()
+        print >> sys.stderr, "loading large prior..."
+        large_prior = logodds.get_large_prior()
 	app.run()
