@@ -35,26 +35,26 @@ def get_tweets(username, numberOfTweets):
 	auth.set_access_token(access_token, access_secret)
 
 	api = tweepy.API(auth)
-
-	#string holds our tweet
-	string = str()
 	
+	#array that holds our string
+	str_array = []
+
 	#-1 means that we want every single tweet
 	if(numberOfTweets == -1):
 		for tweet in limit_handled(tweepy.Cursor(api.user_timeline, username).items()):
 			if not tweet.retweeted and 'RT @' not in tweet.text and tweet.text[0] != '@':
-				string += remove_unneccessary_items(tweet.text);
+				str_array.append(remove_unneccessary_items(tweet.text));
 	else:
 		for tweet in limit_handled(tweepy.Cursor(api.user_timeline, username).items(numberOfTweets)):
 			if not tweet.retweeted and 'RT @' not in tweet.text and tweet.text[0] != '@':
-				string += remove_unneccessary_items(tweet.text);
+				str_array.append(remove_unneccessary_items(tweet.text));
 
-	return string;
-
+	#string holds our tweet
+	return "".join(str_array)
 
 def main():
 	
-	print(get_tweets("Twitter", 1));
+	print(get_tweets("Twitter", 100));
 
 if __name__ == '__main__':
  	main()
