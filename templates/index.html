@@ -1,39 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="..\static\script.js"></script>
+        <link rel="stylesheet" href="..\static\foundation.css">
+        <link rel="stylesheet" href="..\static\area-text.css">
+        <link rel="stylesheet" href="..\static\button.css">
+    </head>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="..\static\script.js"></script>
-<link rel="stylesheet" href="..\static\foundation.css">
-<link rel="stylesheet" href="..\static\area-text.css">
-<link rel="stylesheet" href="..\static\button.css">
-</head>	
+    <title>Our Amazing Incredible App</title>
 
-<title>Our Amazing Incredible App</title>
+    <div class = "background"></div>
 
-<div class = "background"></div>
+    <body>
+        <div class = "window-background"></div>
+            <h1 class="title">Our Amazing Incredible App!</h1>
+            <form class="form">
+                <div class="switch-field">
+                    <div class="switch-title">Input Source</div>
+                    <input type="radio" id="switch_left" name="switch_2" value="plaintext" checked/>
+                    <label for="switch_left">plaintext</label>
+                    <input type="radio" id="switch_right" name="switch_2" value="twitter" />
+                    <label for="switch_right">twitter</label>
+                </div>
+            <form action="/" method="POST">
+                <div class="area-input-textarea" id ="plain">
+                    <textarea class="left-input-textarea textarea-animation-element" name="textarea" rows="15" cols="50">Paste in here text body 1.</textarea>
+                    <textarea class="right-input-textarea textarea-animation-element" name="textarea" rows="15" cols="50">Pawst in here text body 2.</textarea>
 
-<body>
+	                <form action="/" method="POST">
+	                <div class = "submit-button-wrapper">
+	                    <input type = "button" class="submit-button" value="submit"></input>
+	                </div>
+           			</form>
+                </div>
+        	</form>
+        <form action="/" method="POST">
+            <div class="area-input-textarea" id="twitter">
+                <input type="text" name="text1" placeholder="twitter username 1"></input>
+                <input type="text" name="text2" placeholder="twitter username 2"></input>
+               
+		        <form action="/" method="POST">
+			        <div class = "submit-button-wrapper">
+			        	<input type = "button" class="submit-button" value="submit"></input>
+			        </div>
+		        </form>
+        	</div>
+        </form>
 
-	<div class = "window-background">
-
-	<h1 class="title">Our Amazing Incredible App!</h1>	
-
-	<div class="area-input-textarea textarea-animation-element">
-	<textarea class="left-input-textarea" name="textarea" rows="15" cols="50">Paste in here text body 1.</textarea>
-
-	<textarea class="right-input-textarea textarea-animation-element" name="textarea" rows="15" cols="50">Pawst in here text body 2.</textarea>
-	</div>
-
-	<form action="/" method="POST">
-		<div class = "submit-button-wrapper">
-		<input type = "button" class="submit-button" value="submit"></input>
-		</div>
-	</form>
-
-	</div>
-
-</body>
-
-<div class = "background"></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="..\static\script.js"></script>
+    </body>
+    <div class = "background"></div>
 </html>

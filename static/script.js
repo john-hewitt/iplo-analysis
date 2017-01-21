@@ -1,9 +1,7 @@
 $(document).ready(function() {
-    $("").hide();
-
     //SetupTitle();
     SetupTextBoxes();
-    SetupAnimation();
+    //SetupAnimation();
 });
 
 function SetupTitle() {
@@ -24,7 +22,6 @@ function SetupTitle() {
 	    } 
 	});
 }
-
 
 function SetupTextBoxes() {
    $(".left-input-textarea").on({
@@ -92,3 +89,15 @@ function SetupAnimation() {
 	  });
 	}
 }
+
+$(':radio').change(function() {
+	if (this.value == "plaintext") {
+		$('#twitter').fadeOut(function() {
+			$('#plain').fadeIn();
+		});
+	} else if (this.value == "twitter") {
+		$('#plain').fadeOut(function() {
+			$('#twitter').fadeIn();
+		});
+	}
+});
