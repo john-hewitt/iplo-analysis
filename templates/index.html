@@ -4,27 +4,34 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="..\static\script.js"></script>
-<link rel="stylesheet" href="..\static\style.css">
+<link rel="stylesheet" href="..\static\foundation.css">
+<link rel="stylesheet" href="..\static\area-text.css">
+<link rel="stylesheet" href="..\static\button.css">
 </head>	
 
 <title>Our Amazing Incredible App</title>
 
-<body class = "background">
+<div class = "background"></div>
+
+<body>
+
+	<div class = "window-background">
 
 	<h1 class="title">Our Amazing Incredible App!</h1>	
 
-	<div class="area-input">
-	<textarea class="left-input" name="textarea" rows="15" cols="50">Paste in here text body 1.</textarea>
+	<div class="area-input-textarea">
+	<textarea class="left-input-textarea" name="textarea" rows="15" cols="50">Paste in here text body 1.</textarea>
 
-	<textarea class="right-input" name="textarea" rows="15" cols="50">Pawst in here text body 2.</textarea>
+	<textarea class="right-input-textarea" name="textarea" rows="15" cols="50">Pawst in here text body 2.</textarea>
 	</div>
 
-	<div class="submit-button">
-	<form action="/analyze" method="POST">
-		<input type="submit" value="Submit">
-	</form>
+	<div class = "submit-button-wrapper">
+	<button type = "button" class="submit-button">submit
+	</div>
+
 	</div>
 
 </body>
 
+<div class = "background"></div>
 </html>

@@ -1,0 +1,38 @@
+.submit-button-wrapper {
+	position: relative;
+	text-align: center;
+}
+
+.submit-button {
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	-moz-box-shadow: 0px 0px 40px -3px #3dc21b;
+	-webkit-box-shadow: 0px 0px 40px -3px #3dc21b;
+	box-shadow: 0px 0px 40px -3px #3dc21b;
+	background-color:#44c767;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:5px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:28px;
+	font-weight:bold;
+	padding:15px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 11px #2f6627;
+}
+.submit-button:hover {
+	background-color:#5cbf2a;
+}
+.submit-button:active {
+	position:relative;
+	top:3px;
+}
