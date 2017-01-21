@@ -2,8 +2,6 @@
 <html>
 <head>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="..\static\script.js"></script>
 <link rel="stylesheet" href="..\static\style.css">
 </head>	
 
@@ -13,17 +11,37 @@
 
 	<h1 class="title">Our Amazing Incredible App!</h1>	
 
-	<div class="area-input">
-	<textarea class="left-input" name="textarea" rows="15" cols="50">Paste in here text body 1.</textarea>
+	<form class="form">
+    <div class="switch-field">
+      <div class="switch-title">Input Source</div>
+      <input type="radio" id="switch_left" name="switch_2" value="plaintext" checked/>
+      <label for="switch_left">plaintext</label>
+      <input type="radio" id="switch_right" name="switch_2" value="twitter" />
+      <label for="switch_right">twitter</label>
+    </div>
 
-	<textarea class="right-input" name="textarea" rows="15" cols="50">Pawst in here text body 2.</textarea>
+	<form action="/" method="POST">
+	<div class="area-input" id="plain">
+	<textarea class="left-input" name="text1" placeholder="paste text 1 here" rows="15" cols="50" maxlength="100000000"></textarea>
+	<textarea class="right-input" name="text2" placeholder="paste text 2 here" rows="15" cols="50" maxlength="100000000"></textarea>
+	<br>
+	<br>
+	<input type="submit" value="Submit" name="plaintext_submit">
 	</div>
-
-	<div class="submit-button">
-	<form action="/analyze" method="POST">
-		<input type="submit" value="Submit">
 	</form>
+
+	<form action="/" method="POST">
+	<div class="area-input" id="twitter">
+	<input type="text" name="text1" placeholder="twitter username 1"></input>
+	<input type="text" name="text2" placeholder="twitter username 2"></input>
+	<input type="submit" value="Submit" name="twitter_submit">
 	</div>
+	</form>
+
+	</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="..\static\script.js"></script>
 
 </body>
 
