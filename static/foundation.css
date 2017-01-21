@@ -3,11 +3,16 @@ html, body {
 }
 
 .window-background{
-	background-attachment: fixed;
+	background: rgba(255, 255, 255, 0.75);
+}
+
+.background-image {
+	background-image: url('../images/background.jpg');
+	height: 100%;
+  	background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background: rgba(255, 255, 255, 0.2);
 }
 
 .background{
