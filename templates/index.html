@@ -8,13 +8,17 @@
 <body>
 <h1> TITLE! </h1>
 
-<form action="/analyze" method="POST">
+<form action="/" method="POST">
 
-	<textarea name="textarea" rows="15" cols="50">Paste in here text body 1.</textarea>
+	<textarea name="text1" rows="15" cols="50">Paste in here text body 1.</textarea>
 	<br><br>
-	<textarea name="textarea" rows="15" cols="50">Past in here text body 2.</textarea>
+	<textarea name="text2" rows="15" cols="50">Paste in here text body 2.</textarea>
 	<input type="submit" value="Submit">
 </form>
+
+{% if results != None %}
+  {{results}}
+{% endif %}
 
 </body>
 

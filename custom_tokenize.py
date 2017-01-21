@@ -8,7 +8,7 @@ from nltk.tokenize import sent_tokenize, regexp_tokenize
 #
 # yes: normal words, contracted words
 # no:  extraneous punctuation
-def generateTokens(text1, text2):
+def generate_tokens(text1, text2):
 	tokens1 = [regexp_tokenize(t, '\w+\'*\w*') for t in sent_tokenize(text1)]
 	tokens2 = [regexp_tokenize(t, '\w+\'*\w*') for t in sent_tokenize(text2)]
 	return (tokens1, tokens2)
