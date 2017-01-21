@@ -2,24 +2,26 @@
 <html>
 <head>
 <title>Our Amazing App</title>
+<script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
 
 
 <body>
 <h1> TITLE! </h1>
-
+<h2> Header2 </h2>
 <form action="/" method="POST">
 
-	<textarea name="text1" rows="15" cols="50">Paste in here text body 1.</textarea>
+	<textarea name="text1" rows="15" cols="50" maxlength="100000000">Paste in here text body 1.</textarea>
 	<br><br>
-	<textarea name="text2" rows="15" cols="50">Paste in here text body 2.</textarea>
+	<textarea name="text2" rows="15" cols="50" maxlength="100000000">Paste in here text body 2.</textarea>
 	<input type="submit" value="Submit">
 </form>
-
+<!-- 
 {% if results != None %}
   {{results}}
 {% endif %}
-
+ -->
 </body>
-
+<script type="text/javascript" src="static/d3.js"></script>
+<script> draw_graph({{ results|tojson }}) </script>
 </html>
