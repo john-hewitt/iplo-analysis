@@ -26,7 +26,8 @@ html, body {
 }
 
 .title {
-	font-family: 'Nunito', sans-serif;
+	font-family: Helvetica, sans-serif;
+	font-size: 100px;
 	margin: auto;
 	text-align: center;
 	padding: 10px
