@@ -49,9 +49,8 @@ def get_tweets(username, numberOfTweets):
 			for tweet in limit_handled(tweepy.Cursor(api.user_timeline, username).items(numberOfTweets)):
 				if not tweet.retweeted and 'RT @' not in tweet.text and tweet.text[0] != '@':
 					str_array.append(remove_unneccessary_items(tweet.text));
-	except TweepError:
-		code = TweepError.message[0]['code']
-		return code
+	except tweepy.TweepError:
+		return 404
 
 	#string holds our tweet
 	return "".join(str_array)

@@ -1,10 +1,10 @@
-function draw_graph(data, sortedData){
-
+function draw_graph(data, sortedData, color1_, color2_){
 	var width = 800;
 	var height = 600;
-	//take colors as inputs from user?
-	var color1 = "red";
-	var color2 = "blue";
+
+	var color1 = color1_.toString()
+	var color2 = color2_.toString()
+
 	// Array of key (string) values (tuple)
 	var jsData = d3.entries(data);
 	var sortedData = d3.entries(sortedData);
@@ -89,26 +89,6 @@ function draw_graph(data, sortedData){
 				   		.attr("opacity", function(d){return opacityScale(Math.abs(d.value[0]))})
 				   		.attr("id", function(d){return d.key + "_circle"});
 
-
-// if(Math.abs(d.value[0]) < 0.2*maxLogMagnitude &&
-// 				   			Math.abs(d.value[0]) < 1.96 || d.value[1] < 2) return 0.1;
-// 				   		 else 
-	// var labels = canvas.selectAll("text")
-	// 			 .data(jsData)
-	// 			 .enter()
-	// 			 		.append("text")
-	// 			 		.attr("y", function(d){return logScale(d.value[0])})
-	// 			 		.attr("x", function(d){return frequencyScale(d.value[1])})
-	// 			 		.attr("fill", function(d){if (d.value[0] > 0) return color1;
-	// 			   								  else return color2;})
-	// 			 		.attr("opacity", function(d){if(Math.abs(d.value[0]) < 0.2*maxLogMagnitude &&
-	// 			 			Math.abs(d.value[0]) < 1.96 || d.value[1] < 2) return 0;
-	// 			   		 else return 1.5*opacityScale(Math.abs(d.value[0]))})
-	// 			 		.attr("font-size", function(d){return fontSizeScale(Math.abs(d.value[0])) + "px"})
-	// 			 		.attr("text-anchor", "middle")
-	// 			 		.attr("dy", ".3em")
-	// 			 		.text(function(d){return d.key});
-
 	var upperLabels = canvas.selectAll("h6")
 					 .data(highestLogs)
 					 .enter()
@@ -182,14 +162,14 @@ function draw_graph(data, sortedData){
 	 function(d,i){$("#" + d[0] + "_circle").parent().append($("#" + d[0] + "_circle"));
 	 			   $("#" + d[0] + "_label").parent().append($(("#" + d[0] + "_label")));
 	 				d3.select("#" + d[0] + "_circle")
-					 .style("stroke", "black")
+					 .style("stroke", color2)
 					 .style("stroke-width", 5)
 					 .style("stroke-opacity", 1);
 		});
 
 	lowerSideLabels.on("mouseout",
 	 function(d,i){d3.select("#" + d[0] + "_circle")
-					 .style("stroke", "black")
+					 .style("stroke", color2)
 					 .style("stroke-width", 5)
 					 .style("stroke-opacity", 0);
 		});
@@ -198,19 +178,17 @@ function draw_graph(data, sortedData){
 	 function(d,i){$("#" + d[0] + "_circle").parent().append($("#" + d[0] + "_circle"));
 	 			   $("#" + d[0] + "_label").parent().append($(("#" + d[0] + "_label")));
 	 				d3.select("#" + d[0] + "_circle")
-					 .style("stroke", "black")
+					 .style("stroke", color1)
 					 .style("stroke-width", 5)
 					 .style("stroke-opacity", 1);
 		});
 
 	upperSideLabels.on("mouseout",
 	 function(d,i){d3.select("#" + d[0] + "_circle")
-					 .style("stroke", "black")
+					 .style("stroke", color1)
 					 .style("stroke-width", 5)
 					 .style("stroke-opacity", 0);
 		});
-
-	// console.log(lowerSideLabels);
 
 	canvas.append("g")
 			.attr("transform", "translate(0," + logScale(0) + ")")
@@ -221,19 +199,4 @@ function draw_graph(data, sortedData){
 			.attr("transform", "translate(50, 0)")
 			.attr("opacity", 0.4)
 			.call(yAxis);
-	// var circle = canvas.append("circle")
-	// 			 .attr("cx", 250)
-	// 			 .attr("cy", 250)
-	// 			 .attr("r", 50)
-	// 			 .attr("fill", "red");
-
-	// var line = canvas.append("line")
-	// 			.attr("x1", 50)
-	// 			.attr("y1", 50)
-	// 			.attr("x2", 100)
-	// 			.attr("y2", 100)
-	// 			.attr("stroke", "black");
-
-	// body.append("text")
-	// 	.text(data.hi);
 }
