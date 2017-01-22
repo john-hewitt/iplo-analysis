@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Idplo Analysis</title>
-<link rel="stylesheet" href="../static/style.css">
+<!-- <link rel="stylesheet" href="../static/style.css"> -->
 <link rel="stylesheet" href="../static/foundation.css">
 <link rel="stylesheet" href="../static/area-text.css">
 <link rel="stylesheet" href="../static/button.css">
@@ -64,30 +64,29 @@
  -->
     <!-- <div class = "background"></div> -->
 
-    <body class = "background-image">
+    <body class = "background default-primary-color">
     	<div class = "window-background">
     		<div class="demo" data-in-effect="rollIn">
-            	<h1 class="title">Idplo Analysis</h1>
+            	<h1 class="title text-primary-color">Idplo Analysis</h1>
             </div>
 
-            <form class="form">
-                <div class="switch-field">
-                    <div class="switch-title">Input Source</div>
-                    <input type="radio" id="switch_left" name="switch_2" value="plaintext" checked/>
+            <div class="switch-field">
+                <div class="switch-title secondary-text-color">Input Source</div>
+                <div class="switch-buttons">
+                	<input type="radio" id="switch_left" name="switch_2" value="plaintext" checked/>
                     <label for="switch_left">plaintext</label>
                     <input type="radio" id="switch_right" name="switch_2" value="twitter" />
                     <label for="switch_right">twitter</label>
                 </div>
-            </form>
+            </div>
 
             <form action="/" method="POST">
-                <div class="area-input-textarea" id ="plain">
+                <div class="area-input-textarea" id="plain">
                     <textarea class="left-input-textarea textarea-animation-element" name="text1" rows="15" cols="50" maxlength="100000000">Paste in here text body 1.</textarea>
                     <textarea class="right-input-textarea textarea-animation-element" name="text2" rows="15" cols="50" maxlength="100000000">Paste in here text body 2.</textarea>
-
-	                <div class = "submit-button-wrapper">
-	                    <input type ="submit" class="submit-button" value="plaintext" name="submit"></input>
-	                </div>
+                </div>
+                <div class = "textarea-submit-button">
+                	<input type ="submit" class="submit-button" value="plaintext" name="submit"></input>
                 </div>
         	</form>
 
@@ -103,6 +102,7 @@
 			        </form>
 	        	</div>
 	        </form>
+
         <script type="text/javascript" src="../static/script.js"></script>
         <script src="../static/lettering/jquery.lettering.js"></script>
         <script src="../static/textillate/jquery.textillate.js"></script> 

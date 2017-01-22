@@ -2,22 +2,20 @@ html, body {
 	height: 100%;
 }
 
-.window-background{
-	background: rgba(255, 255, 255, 0.75);
-}
+.dark-primary-color    { background: #1976D2; }
+.default-primary-color { background: #2196F3; }
+.light-primary-color   { background: #BBDEFB; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #FF5252; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #757575; }
+.divider-color         { border-color: #BDBDBD; }
 
-.background-image {
-	background-image: url('../static/background.jpg');
-	height: 100%;
-  	background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.window-background{
+	background: #2196F3;
 }
 
 .background{
-	background-image: url('../static/background.jpg');
-	filter: blur(5px);
   	height: 100%;
   	background-attachment: fixed;
     background-position: center;
@@ -28,7 +26,6 @@ html, body {
 .title {
 	font-family: Helvetica, sans-serif;
 	font-size: 100px;
-	margin: auto;
 	text-align: center;
 	padding: 10px
 	width: 100%;
@@ -39,7 +36,6 @@ html, body {
   	overflow: auto;
 }
 
-
 /* begin toggle buttons */
 
 .switch-field {
@@ -47,6 +43,14 @@ html, body {
   padding: 40px;
   overflow: hidden;
   text-align: center;
+  position: relative;
+}
+
+.switch-buttons{
+	position: absolute;
+	left:50%;
+  	transform: translateX(-50%);
+  	-webkit-transform: translateX(-50%);
 }
 
 .switch-title {
@@ -99,4 +103,5 @@ html, body {
   border-radius: 0 4px 4px 0;
 }
 
-/* end toggle button */
+/* end toggle button 
+*/

@@ -23,6 +23,12 @@ def index():
 		else:
 			text1 = twitter_scrapper.get_tweets(request.form['handle1'], 100)
 			text2 = twitter_scrapper.get_tweets(request.form['handle2'], 100)
+			if text1 == 404 or text2 == 404:
+				return None
+				# user not found
+		 	elif text1 == 420 or text1 == 429 or text2 == 420 or text2 == 429:
+		 		return None
+		 		# too many requests 
 
 		tokenized = custom_tokenize.generate_tokens(text1, text2)
 		phrases1 = list(phrasifier.phrases_of_sents(tokenized[0]))
@@ -54,10 +60,10 @@ def upload_file():
 			s = file.read()
 			return s
 	return
-	
+
 if __name__ == "__main__":
         print >> sys.stderr, "loading phrasifier..."
-        phrasifier = extract_phrases.get_default_phrasifier()
+        # phrasifier = extract_phrases.get_default_phrasifier()
         print >> sys.stderr, "loading large prior..."
-        large_prior = logodds.get_large_prior()
+        # large_prior = logodds.get_large_prior()
 	app.run()
