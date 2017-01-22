@@ -1,4 +1,5 @@
 function draw_graph(data, sortedData, color1_, color2_){
+	if (data == undefined || sortedData == undefined || color1_ == undefined || color2_ == undefined) return;
 	var width = 800;
 	var height = 600;
 
@@ -42,9 +43,9 @@ function draw_graph(data, sortedData, color1_, color2_){
 				 .append("svg")
 				 .attr("width", width)
 				 .attr("height", height)
+				 .attr("class", "graph-svg")
 				 .append("g");
 				 // .attr("transform", "translate(20, 20)");
-
 
 	var logScale = d3.scaleLinear()
 					.domain([minLog, maxLog])

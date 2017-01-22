@@ -23,7 +23,7 @@ def index():
 		if request.form['submit'] == 'plaintext':
 			text1 = request.form['text1']
 			text2 = request.form['text2']
-		else:
+		elif request.form['submit'] == 'twitter':
 			if request.form['handle1'] == '' or request.form['handle2'] == '':
 				error = 404
 				return render_template("index.html", results=None, sortedResults=None, error=error, color1=color1, color2=color2)
@@ -32,6 +32,16 @@ def index():
 			if text1 == 404 or text2 == 404:
 				error = 404
 				return render_template("index.html", results=None, sortedResults=None, error=error, color1=color1, color2=color2)
+		elif request.form['submit'] == 'file':
+                    print "file submitted!"
+                    file1 = request.files['file1']
+                    file2 = request.files['file2']
+                    if not (allowed_file(file1.filename) and allowed_file(file2.filename)): 
+                        return render_template("index.html", results=None, sortedResults=None)
+                    print "file allowed!"
+                    text1 = file1.read().decode('utf-8')
+                    text2 = file2.read().decode('utf-8')
+
 		color1 = str(request.form['color1'])
 		color2 = str(request.form['color2'])
 
@@ -50,21 +60,6 @@ def index():
 
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-@app.route('/', methods=['GET', 'POST'])
-def upload_file():
-	if request.method == 'POST':
-		if 'file' not in request.files:
-			flash('No file part')
-			return redirect(request.url)
-		file = request.files['file']
-		if file.filename == '':
-			flash('No selected file');
-			return redirect(request.url)
-		if file and allowed_file(file.filename):
-			s = file.read()
-			return s
-	return
 
 if __name__ == "__main__":
         print >> sys.stderr, "loading phrasifier..."
