@@ -39,15 +39,20 @@ def get_tweets(username, numberOfTweets):
 	#array that holds our string
 	str_array = []
 
-	#-1 means that we want every single tweet
-	if(numberOfTweets == -1):
-		for tweet in limit_handled(tweepy.Cursor(api.user_timeline, username).items()):
-			if not tweet.retweeted and 'RT @' not in tweet.text and tweet.text[0] != '@':
-				str_array.append(remove_unneccessary_items(tweet.text));
-	else:
-		for tweet in limit_handled(tweepy.Cursor(api.user_timeline, username).items(numberOfTweets)):
-			if not tweet.retweeted and 'RT @' not in tweet.text and tweet.text[0] != '@':
-				str_array.append(remove_unneccessary_items(tweet.text));
+	try:
+		#-1 means that we want every single tweet
+		if(numberOfTweets == -1):
+			for tweet in limit_handled(tweepy.Cursor(api.user_timeline, username).items()):
+				if not tweet.retweeted and 'RT @' not in tweet.text and tweet.text[0] != '@':
+					str_array.append(remove_unneccessary_items(tweet.text));
+		else:
+			for tweet in limit_handled(tweepy.Cursor(api.user_timeline, username).items(numberOfTweets)):
+				if not tweet.retweeted and 'RT @' not in tweet.text and tweet.text[0] != '@':
+					str_array.append(remove_unneccessary_items(tweet.text));
+		break
+	except TweepError:
+		code = TweepError.message[0]['code']
+		return code
 
 	#string holds our tweet
 	return "".join(str_array)
