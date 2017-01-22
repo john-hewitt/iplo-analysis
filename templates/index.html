@@ -31,15 +31,15 @@
 		<textarea class="right-input" name="text2" placeholder="paste text 2 here" rows="15" cols="50" maxlength="100000000"></textarea>
 		<br>
 		<br>
-		<input type="submit" value="Submit" name="plaintext_submit">
+		<input type="submit" value="plaintext" name="submit">
 		</div>
 	</form>
 
 	<form action="/" method="POST">
 		<div class="area-input" id="twitter">
-		<input type="text" name="text1" placeholder="twitter username 1"></input>
-		<input type="text" name="text2" placeholder="twitter username 2"></input>
-		<input type="submit" value="Submit" name="twitter_submit">
+		<input type="text" name="handle1" placeholder="twitter username 1"></input>
+		<input type="text" name="handle2" placeholder="twitter username 2"></input>
+		<input type="submit" value="twitter" name="submit">
 		<div class="area-input-textarea">
 		<textarea class="left-input-textarea" name="textarea" rows="15" cols="50">Paste in here text body 1.</textarea>
 
@@ -47,16 +47,17 @@
 		</div>
 
 		<div class = "submit-button-wrapper">
-		<button type = "button" class="submit-button">Submit
-		</div>
+		<!-- <button type = "button" class="submit-button">Submit
+		</div> -->
 	</form>
 
 
 	</div>
+	{{ sortedResults }}
 </body>
 <script type="text/javascript" src="../static/script.js"></script>
 <!-- <div class = "background"></div> -->
 <script type="text/javascript" src="../static/d3.js"></script>
-<script> draw_graph({{ results|tojson }}) </script>
+<script> draw_graph({{ results|tojson }}, {{ sortedResults|tojson }}) </script>
 
 </html>
