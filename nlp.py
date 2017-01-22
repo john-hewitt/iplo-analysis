@@ -48,7 +48,7 @@ def loganalysis(text1, text2):
 
 if __name__ == "__main__":
         print >> sys.stderr, "loading phrasifier..."
-	phrasifier = extract_phrases.get_default_phrasifier()
+        phrasifier = extract_phrases.get_default_phrasifier()
         print >> sys.stderr, "loading large prior..."
         large_prior = logodds.get_large_prior()
 	app.run()

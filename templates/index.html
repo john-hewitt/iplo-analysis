@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Our Amazing App</title>
+<title>Idplo Analysis</title>
 <link rel="stylesheet" href="../static/style.css">
 <link rel="stylesheet" href="../static/foundation.css">
 <link rel="stylesheet" href="../static/area-text.css">
 <link rel="stylesheet" href="../static/button.css">
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="../static/script.js"></script>
 </head>
 
 <!-- <div class = "background"></div> -->
 
 <body>
-	<div class = "window-background">
+	<!-- <div class = "window-background">
 
 	<h1 class="title">Our Amazing Incredible App!</h1>	
 
@@ -48,7 +49,7 @@
 
 		<div class = "submit-button-wrapper">
 		<!-- <button type = "button" class="submit-button">Submit
-		</div> -->
+		</div> 
 	</form>
 
 
@@ -56,8 +57,61 @@
 	{{ sortedResults }}
 </body>
 <script type="text/javascript" src="../static/script.js"></script>
-<!-- <div class = "background"></div> -->
+<!-- <div class = "background"></div> 
 <script type="text/javascript" src="../static/d3.js"></script>
 <script> draw_graph({{ results|tojson }}, {{ sortedResults|tojson }}) </script>
+=======
+ -->
+    <!-- <div class = "background"></div> -->
 
+    <body class = "background-image">
+    	<div class = "window-background">
+    		<div class="demo" data-in-effect="rollIn">
+            	<h1 class="title">Idplo Analysis</h1>
+            </div>
+
+            <form class="form">
+                <div class="switch-field">
+                    <div class="switch-title">Input Source</div>
+                    <input type="radio" id="switch_left" name="switch_2" value="plaintext" checked/>
+                    <label for="switch_left">plaintext</label>
+                    <input type="radio" id="switch_right" name="switch_2" value="twitter" />
+                    <label for="switch_right">twitter</label>
+                </div>
+            </form>
+
+            <form action="/" method="POST">
+                <div class="area-input-textarea" id ="plain">
+                    <textarea class="left-input-textarea textarea-animation-element" name="text1" rows="15" cols="50" maxlength="100000000">Paste in here text body 1.</textarea>
+                    <textarea class="right-input-textarea textarea-animation-element" name="text2" rows="15" cols="50" maxlength="100000000">Paste in here text body 2.</textarea>
+
+	                <div class = "submit-button-wrapper">
+	                    <input type ="submit" class="submit-button" value="plaintext" name="submit"></input>
+	                </div>
+                </div>
+        	</form>
+
+	        <form action="/" method="POST">
+	            <div class="area-input-textarea" id="twitter">
+	                <input type="text" name="handle1" placeholder="twitter username 1"></input>
+	                <input type="text" name="handle2" placeholder="twitter username 2"></input>
+	               
+			        <form action="/" method="POST">
+				        <div class = "submit-button-wrapper">
+				        	<input type = "submit" class="submit-button" value="twitter" name="submit"></input>
+				        </div>
+			        </form>
+	        	</div>
+	        </form>
+<!-- >>>>>>> db63935c01ea043945a5a77cff19550208102b98 -->
+        <script type="text/javascript" src="../static/script.js"></script>
+        <script src="../static/lettering/jquery.lettering.js"></script>
+        <script src="../static/textillate/jquery.textillate.js"></script> 
+        <link rel="stylesheet" href="../static/animate/animate.css">
+        <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+        </div>
+    </body>
+    <!-- <div class = "background"></div> -->
+    <script type="text/javascript" src="../static/d3.js"></script>
+	<script> draw_graph({{ results|tojson }}, {{ sortedResults|tojson }}) </script>
 </html>
