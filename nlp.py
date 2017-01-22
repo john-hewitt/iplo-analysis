@@ -1,4 +1,6 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
+from werkzeug.utils import secure_filename
+
 import custom_tokenize
 import logodds
 import extract_phrases
@@ -6,6 +8,8 @@ import twitter_scrapper
 import sys
 
 app = Flask(__name__)
+
+ALLOWED_EXTENSIONS = set(['txt'])
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -42,6 +46,24 @@ def index():
 		return render_template("index.html", results=results, sortedResults=sortedResults, fullSortedResults=fullSortedResults)
 	else:
 		return render_template("index.html", results=None, sortedResults=None)
+
+def allowed_file(filename):
+	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+@app.route('/', methods=['GET', 'POST'])
+def upload_file():
+	if request.method == 'POST':
+		if 'file' not in request.files:
+			flash('No file part')
+			return redirect(request.url)
+		file = request.files['file']
+		if file.filename == '':
+			flash('No selected file');
+			return redirect(request.url)
+		if file and allowed_file(file.filename):
+			s = file.read()
+			return s
+	return
 
 def loganalysis(text1, text2):
 	return text1 + ' ' + text2
