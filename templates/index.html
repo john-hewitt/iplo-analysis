@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Idplo Analysis</title>
+<link rel="stylesheet" href="../static/foundation.css">
+<link rel="stylesheet" href="../static/area-text.css">
+<link rel="stylesheet" href="../static/button.css">
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="../static/script.js"></script>
+</head>
+
+    <body class = "background default-primary-color">
+    	<div class = "window-background">
+    		<div class="demo" data-in-effect="rollIn">
+            	<h1 class="title text-primary-color">Idplo Analysis</h1>
+            </div>
+
+            <div class="switch-field">
+                <div class="switch-title secondary-text-color">Input Source</div>
+                <div class="switch-buttons">
+                	<input type="radio" id="switch_left" name="switch_2" value="plain" checked/>
+                    <label for="switch_left">plaintext</label>
+                    <input type="radio" id="switch_right" name="switch_2" value="twitter" />
+                    <label for="switch_right">twitter</label>
+                    <input type="radio" id="switch_farright" name="switch_2" value="file" />
+                    <label for="switch_farright">textfile</label>
+                </div>
+            </div>
+
+            <form action="/" method="POST">
+                <div class="area-input-textarea" id="plain">
+                	<div class="error">
+	            		{% if error == 404 %}
+	            			<p>You entered an invalid or empty Twitter handle. Please check your inputs and try again!
+	            			</p>
+	            		{% endif %}
+	            	</div>
+                    <textarea class="left-input-textarea textarea-animation-element" name="text1" rows="15" cols="50" maxlength="100000000">Paste in here text body 1.</textarea>
+                    <textarea class="right-input-textarea textarea-animation-element" name="text2" rows="15" cols="50" maxlength="100000000">Paste in here text body 2.</textarea>
+
+                    <select name="color1">
+		        		<option value="red" selected>Red</option>
+		        		<option value="blue">Blue</option>
+		        		<option value="green">Green</option>
+		        		<option value="yellow">Yellow</option>
+		        		<option value="purple">Purple</option>
+		        		<option value="pink">Pink</option>
+		        		<option value="orange">Orange</option>
+		        		<option value="black">Black</option>
+	        		</select>
+
+	        		 <select name="color2">
+		        		<option value="red">Red</option>
+		        		<option value="blue" selected>Blue</option>
+		        		<option value="green">Green</option>
+		        		<option value="yellow">Yellow</option>
+		        		<option value="purple">Purple</option>
+		        		<option value="pink">Pink</option>
+		        		<option value="orange">Orange</option>
+		        		<option value="black">Black</option>
+	        		</select>
+                </div>
+                <div class = "submit-button-wrapper1">
+                	<input type ="submit" class="submit-button" value="plaintext" name="submit"></input>
+                </div>
+        	</form>
+
+	        <form action="/" method="POST">
+	            <div class="area-input-textarea" id="twitter">
+	            	<div class="error">
+	            		{% if error == 404 %}
+	            			<p>You entered an invalid or empty Twitter handle. Please check your inputs and try again! (Do not include the @ symbol).
+	            			</p>
+	            		{% endif %}
+	            	</div>
+	                <input type="text" name="handle1" placeholder="twitter username 1"></input>
+	                <input type="text" name="handle2" placeholder="twitter username 2"></input>
+	               	
+	               	<select name="color1">
+		        		<option value="red" selected>Red</option>
+		        		<option value="blue">Blue</option>
+		        		<option value="green">Green</option>
+		        		<option value="yellow">Yellow</option>
+		        		<option value="purple">Purple</option>
+		        		<option value="pink">Pink</option>
+		        		<option value="orange">Orange</option>
+		        		<option value="black">Black</option>
+	        		</select>
+
+	        		 <select name="color2">
+		        		<option value="red">Red</option>
+		        		<option value="blue" selected>Blue</option>
+		        		<option value="green">Green</option>
+		        		<option value="yellow">Yellow</option>
+		        		<option value="purple">Purple</option>
+		        		<option value="pink">Pink</option>
+		        		<option value="orange">Orange</option>
+		        		<option value="black">Black</option>
+	        		</select>
+
+			        <form action="/" method="POST">
+				        <div class = "submit-button-wrapper2">
+				        	<input type = "submit" class="submit-button" value="twitter" name="submit"></input>
+				        </div>
+			        </form>
+	        	</div>
+	        </form>
+
+	        <form action="/" method="POST" enctype="multipart/form-data">
+	            <div class="area-input-textarea" id="file" style="display:none">
+	                <input type="file" name="file1" ></input>
+	                <input type="file" name="file2" ></input>
+			        <form action="/" method="POST">
+				        <div class = "submit-button-wrapper3">
+				        	<input type = "submit" class="submit-button" value="file" name="submit"></input>
+				        </div>
+			        </form>
+	        	</div>
+	        </form>
+
+        <script type="text/javascript" src="../static/script.js"></script>
+        <script src="../static/lettering/jquery.lettering.js"></script>
+        <script src="../static/textillate/jquery.textillate.js"></script> 
+        <link rel="stylesheet" href="../static/animate/animate.css">
+        <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+        </div>
+    </body>
+    <script type="text/javascript" src="../static/d3.js"></script>
+	<script> draw_graph({{ results|tojson }}, {{ sortedResults|tojson }}, {{color1|tojson}}, {{color2|tojson}}) </script>
+</html>
+

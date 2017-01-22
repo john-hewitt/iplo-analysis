@@ -171,16 +171,34 @@ def print_test_phrase_replaceent():
     extractor = Phrasifier(phrases)
     print [x for x in extractor.phrases_of_sents([['Barack', 'Obama', 'was', 'president', 'in', 'the', 'White', 'House'],['Steve', 'Jobs', 'founded', 'Apple', 'Inc.']])]
 
+
+def yield_sentences(corpusfile):
+    for line in codecs.open(corpusfile, 'r', 'utf-8'):
+        yield [x.strip() for x in line.split(' ')]
+
 if __name__ == '__main__':
     #print_test_phrase_replaceent()
     argp = argparse.ArgumentParser()
     argp.add_argument('corpus')
     args = argp.parse_args()
+    phrasifier = get_default_phrasifier()
+    buf = []
+    for phrase in phrasifier.phrases_of_sents(yield_sentences(args.corpus)):
+        if len(buf) == 100:
+            print ' '.join(buf)
+            buf = []
+        else:
+            buf.append(phrase)
+    if buf:
+        print ' '.join(buf)
+
+
+
     #corpus = codecs.open(args.corpus, 'r', 'utf-8').readlines()
     #corpus = [filter(lambda z: bool(z), [x.strip() for x in y.split()]) for y in corpus]
-    ratio_list = ratios(args.corpus)
-    for word1, word2, in sorted(ratio_list, key = lambda x: ratio_list[x]):
-        print '\t'.join([word1.encode('utf-8'), word2.encode('utf-8'), str(ratio_list[(word1, word2)])])
+    #ratio_list = ratios(args.corpus)
+    #for word1, word2, in sorted(ratio_list, key = lambda x: ratio_list[x]):
+    #    print '\t'.join([word1.encode('utf-8'), word2.encode('utf-8'), str(ratio_list[(word1, word2)])])
 
 
 

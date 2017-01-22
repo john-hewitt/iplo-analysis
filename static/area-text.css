@@ -1,0 +1,58 @@
+#twitter {
+	display: none;
+}
+
+.area-input-textarea {
+	margin: auto;
+	width: 100%;
+	height: auto;
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	resize: both;
+	position: relative;
+}
+
+.left-input-textarea {
+	display: inline-block;
+	font-family: 'Nunito', sans-serif;
+	padding: 10px;
+	width: 30%;
+	height: 180px;
+	resize: none;
+	border: 3px solid #cccccc;
+	font-size:16px;
+	border-color:#cccccc;
+	background-color:#ffffff;
+	border-width:4px;
+	box-shadow: 0px 0px 15px 0px
+	rgba(42,42,42,.75);
+	border-radius:13px;
+	padding:6px;
+	position: absolute;
+	left: 12%;
+
+}
+
+.right-input-textarea {
+	display: inline-block;
+	font-family: 'Nunito', sans-serif;
+	padding: 10px;
+	width: 30%;
+	height: 180px;
+	resize: none;
+	border: 3px solid #cccccc;
+	font-size:16px;
+	border-color:#cccccc;
+	background-color:#ffffff;
+	border-width:4px;
+	box-shadow: 0px 0px 15px 0px
+	rgba(42,42,42,.75);
+	border-radius:13px;
+	padding:6px;
+	position: absolute;
+	right: 12%;
+} 
+
+.left-input-textarea:focus { outline:none; } 
+.right-input-textarea:focus { outline:none; } 
