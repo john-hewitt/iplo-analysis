@@ -7,15 +7,19 @@ $(document).ready(function() {
 });
 
 $(':radio').change(function() {
-	if (this.value == "plaintext") {
-		$('#twitter').fadeOut(function() {
+	if (this.value == "plain") {
+		$('#twitter, #file').hide(0, function() {
 			$('#plain').fadeIn();
 		});
 	} else if (this.value == "twitter") {
-		$('#plain').fadeOut(function() {
+		$('#plain, #file').hide(0, function() {
 			$('#twitter').fadeIn();
 		});
-	}
+	} else if (this.value == "file") {
+		$('#twitter, #plain').hide(0, function() {
+			$('#file').fadeIn();
+		});
+	} 
 });
 /*
     SetupTitle();
@@ -146,15 +150,3 @@ function SetupAnimation() {
 	  });
 	}
 }
-
-$(':radio').change(function() {
-	if (this.value == "plaintext") {
-		$('#twitter').fadeOut(function() {
-			$('#plain').fadeIn();
-		});
-	} else if (this.value == "twitter") {
-		$('#plain').fadeOut(function() {
-			$('#twitter').fadeIn();
-		});
-	}
-});
