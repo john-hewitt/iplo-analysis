@@ -20,14 +20,28 @@ def index():
 		if request.form['submit'] == 'plaintext':
 			text1 = request.form['text1']
 			text2 = request.form['text2']
-		else:
+                elif request.form['submit'] == 'twitter':
 			text1 = twitter_scrapper.get_tweets(request.form['handle1'], 100)
 			text2 = twitter_scrapper.get_tweets(request.form['handle2'], 100)
+                elif request.form['submit'] == 'file':
+                    print "file submitted!"
+                    file1 = request.files['file1']
+                    file2 = request.files['file2']
+                    if not (allowed_file(file1.filename) and allowed_file(file2.filename)): 
+                        return render_template("index.html", results=None, sortedResults=None)
+                    print "file allowed!"
+                    text1 = file1.read().decode('utf-8')
+                    text2 = file2.read().decode('utf-8')
+                    print text1
+                    #file2 = codecs.open(request.files['file2'], 'r', 'utf-8')
+                    #file1 = codecs.open(request.files['file1'], 'r' , 'utf-8')
 
 		tokenized = custom_tokenize.generate_tokens(text1, text2)
+                print tokenized
 		phrases1 = list(phrasifier.phrases_of_sents(tokenized[0]))
 		phrases2 = list(phrasifier.phrases_of_sents(tokenized[1]))
 		results = logodds.get_analysis(phrases1, phrases2, large_prior)
+                print results
 		sortedResults = sorted(results.items(), key=lambda x:x[1][0])
 		lowestLogScores = sortedResults[:10]
 		highestLogScores = sortedResults[-10:]
@@ -40,20 +54,18 @@ def index():
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/', methods=['GET', 'POST'])
-def upload_file():
-	if request.method == 'POST':
-		if 'file' not in request.files:
-			flash('No file part')
-			return redirect(request.url)
-		file = request.files['file']
-		if file.filename == '':
-			flash('No selected file');
-			return redirect(request.url)
-		if file and allowed_file(file.filename):
-			s = file.read()
-			return s
-	return
+##def upload_file():
+#		if 'file' not in request.files:
+#			flash('No file part')
+#			return redirect(request.url)
+#		file = request.files['file']
+#		if file.filename == '':
+#			flash('No selected file');
+#			return redirect(request.url)
+#		if file and allowed_file(file.filename):
+#			s = file.read()
+#			return s
+#	return
 	
 if __name__ == "__main__":
         print >> sys.stderr, "loading phrasifier..."

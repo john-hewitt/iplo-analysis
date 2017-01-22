@@ -77,6 +77,8 @@
                     <label for="switch_left">plaintext</label>
                     <input type="radio" id="switch_right" name="switch_2" value="twitter" />
                     <label for="switch_right">twitter</label>
+                    <input type="radio" id="switch_farright" name="switch_2" value="file" />
+                    <label for="switch_farright">textfile</label>
                 </div>
             </form>
 
@@ -103,6 +105,20 @@
 			        </form>
 	        	</div>
 	        </form>
+
+	        <form action="/" method="POST" enctype="multipart/form-data">
+	            <div class="area-input-textarea" id="file">
+	                <input type="file" name="file1" ></input>
+	                <input type="file" name="file2" ></input>
+			        <form action="/" method="POST">
+				        <div class = "submit-button-wrapper">
+				        	<input type = "submit" class="submit-button" value="file" name="submit"></input>
+				        </div>
+			        </form>
+	        	</div>
+	        </form>
+
+
         <script type="text/javascript" src="../static/script.js"></script>
         <script src="../static/lettering/jquery.lettering.js"></script>
         <script src="../static/textillate/jquery.textillate.js"></script> 
