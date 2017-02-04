@@ -1,8 +1,6 @@
 html, body {
-	height: 100%;
 	font-family: Helvetica, sans-serif;
 	color: white;
-  position: relative;
 }
 
 .dark-primary-color    { background: #1976D2; }
@@ -14,11 +12,6 @@ html, body {
 .secondary-text-color  { color: #757575; }
 .divider-color         { border-color: #BDBDBD; }
 
-.window-background{
-	background: #2196F3;
-	position: relative;
-}
-
 .graph-svg{
   background-color: white;
   border-radius: 30px;
@@ -28,26 +21,6 @@ html, body {
   -webkit-transform: translateX(-50%);
   margin-top: 50px;
   margin-bottom: 50px;
-}
-
-.background{
-  	height: 100%;
-  	background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.title {
-	font-size: 100px;
-	text-align: center;
-	padding: 10px
-	width: 100%;
-	margin-left: 10px;
-	margin-right: 10px;
-	margin-top: 50px;
-	margin-bottom: 0px;
-  	overflow: auto;
 }
 
 /* begin toggle buttons */
