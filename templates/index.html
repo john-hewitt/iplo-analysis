@@ -15,368 +15,252 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Iplo Analysis</a>
-            </div>
+	<!-- Navigation -->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand page-scroll" href="#page-top">Iplo Analysis</a>
+			</div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a class="page-scroll" href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">Analysis</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+					<li class="hidden">
+						<a class="page-scroll" href="#page-top"></a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#analysis">Analysis</a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#services">About</a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#contact">Contact</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
 
-    <!-- Intro Section -->
-    <section id="intro" class="intro-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Iplo Analysis</h1>
-                    <p><strong>Usage Instructions:</strong> Make sure to include the <code>scrolling-nav.js</code>, <code>jquery.easing.min.js</code>, and <code>scrolling-nav.css</code> files. To make a link smooth scroll to another section on the page, give the link the <code>.page-scroll</code> class and set the link target to a corresponding ID on the page.</p>
-                    <a class="btn btn-default page-scroll" href="#about">Click Me to Scroll Down!</a>
-                </div>
-            </div>
-        </div>
-    </section>
+	<!-- Intro Section -->
+	<section id="intro" class="intro-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Iplo Analysis</h1>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>About Section</h1>
-                    <div class="switch-field">
-            <div class="switch-title secondary-text-color">Input Source</div>
-            <div class="switch-buttons">
-            	<input type="radio" id="switch_left" name="switch_2" value="plain" checked/>
-                <label for="switch_left">plaintext</label>
-                <input type="radio" id="switch_right" name="switch_2" value="twitter" />
-                <label for="switch_right">twitter</label>
-                <input type="radio" id="switch_farright" name="switch_2" value="file" />
-                <label for="switch_farright">textfile</label>
-            </div>
-        </div>
 
-        <form action="/" method="POST">
-            <div class="area-input-textarea" id="plain">
-            	<div class="error">
-            		{% if error == 404 %}
-            			<p>You entered an invalid or empty Twitter handle. Please check your inputs and try again!
-            			</p>
-            		{% endif %}
-            	</div>
-            	<select name="color1">
-	        		<option value="red" selected>Red</option>
-	        		<option value="blue">Blue</option>
-	        		<option value="green">Green</option>
-	        		<option value="yellow">Yellow</option>
-	        		<option value="purple">Purple</option>
-	        		<option value="pink">Pink</option>
-	        		<option value="orange">Orange</option>
-	        		<option value="black">Black</option>
-        		</select>
 
-        		 <select name="color2">
-	        		<option value="red">Red</option>
-	        		<option value="blue" selected>Blue</option>
-	        		<option value="green">Green</option>
-	        		<option value="yellow">Yellow</option>
-	        		<option value="purple">Purple</option>
-	        		<option value="pink">Pink</option>
-	        		<option value="orange">Orange</option>
-	        		<option value="black">Black</option>
-        		</select>
-                <textarea class="left-input-textarea textarea-animation-element" name="text1" rows="15" cols="50" maxlength="100000000">Paste in here text body 1.</textarea>
-                <textarea class="right-input-textarea textarea-animation-element" name="text2" rows="15" cols="50" maxlength="100000000">Paste in here text body 2.</textarea>
+				<!-- 	<div class="switch-field">
+						<div class="switch-title secondary-text-color">Input Source</div>
+						<div class="switch-buttons">
+							<input type="radio" id="switch_left" name="switch_2" value="plain" checked/>
+							<label for="switch_left">plaintext</label>
+							<input type="radio" id="switch_right" name="switch_2" value="twitter" />
+							<label for="switch_right">twitter</label>
+							<input type="radio" id="switch_farright" name="switch_2" value="file" />
+							<label for="switch_farright">textfile</label>
+						</div>
+					</div> -->
 
-                <div class = "submit-button-wrapper1">
-                	<input type="hidden" name="submit" value="plaintext"></input>
-                	<input type ="submit" class="submit-button" value="Submit" name="submittext"></input>
-                </div>
-            </div>
-    	</form>
 
-        <form action="/" method="POST">
-            <div class="area-input-textarea" id="twitter">
-            	<div class="error">
-            		{% if error == 404 %}
-            			<p>You entered an invalid or empty Twitter handle. Please check your inputs and try again! (Do not include the @ symbol).
-            			</p>
-            		{% endif %}
-            	</div>
-                <input type="text" name="handle1" placeholder="twitter username 1"></input>
-                <input type="text" name="handle2" placeholder="twitter username 2"></input>
-               	
-               	<select name="color1">
-	        		<option value="red" selected>Red</option>
-	        		<option value="blue">Blue</option>
-	        		<option value="green">Green</option>
-	        		<option value="yellow">Yellow</option>
-	        		<option value="purple">Purple</option>
-	        		<option value="pink">Pink</option>
-	        		<option value="orange">Orange</option>
-	        		<option value="black">Black</option>
-        		</select>
+					<!-- Radio Button Selection Field -->
+					<div class="btn-group" data-toggle="buttons">
+						<label class="btn btn-primary active">
+							<input type="radio" name="options" id="option1" autocomplete="off" checked> Radio 1
+						</label>
+						<label class="btn btn-primary">
+							<input type="radio" name="options" id="option2" autocomplete="off"> Radio 2
+						</label>
+						<label class="btn btn-primary">
+							<input type="radio" name="options" id="option3" autocomplete="off"> Radio 3
+						</label>
+					</div>
 
-        		 <select name="color2">
-	        		<option value="red">Red</option>
-	        		<option value="blue" selected>Blue</option>
-	        		<option value="green">Green</option>
-	        		<option value="yellow">Yellow</option>
-	        		<option value="purple">Purple</option>
-	        		<option value="pink">Pink</option>
-	        		<option value="orange">Orange</option>
-	        		<option value="black">Black</option>
-        		</select>
 
-		        <form action="/" method="POST">
-			        <div class = "submit-button-wrapper2">
-			        	<input type="hidden" name="submit" value="twitter"></input>
-			        	<input type = "submit" class="submit-button" value="Submit" name="submittwitter"></input>
-			        </div>
-		        </form>
-        	</div>
-        </form>
+					<form action="/" method="POST">
+						<div class="area-input-textarea" id="plain">
+							<div class="error">
+								{% if error == 404 %}
+										<p>You entered an invalid or empty Twitter handle. Please check your inputs and try again!
+										</p>
+								{% endif %}
+							</div>
+							<select name="color1">
+								<option value="red" selected>Red</option>
+								<option value="blue">Blue</option>
+								<option value="green">Green</option>
+								<option value="yellow">Yellow</option>
+								<option value="purple">Purple</option>
+								<option value="pink">Pink</option>
+								<option value="orange">Orange</option>
+								<option value="black">Black</option>
+							</select>
 
-        <form action="/" method="POST" enctype="multipart/form-data">
-            <div class="area-input-textarea" id="file" style="display:none">
-            	<div class="error">
-            		<p>.txt files only</p>
-            	</div>
-                <input type="file" name="file1" required></input>
-                <input type="file" name="file2" required></input>
+							 <select name="color2">
+								<option value="red">Red</option>
+								<option value="blue" selected>Blue</option>
+								<option value="green">Green</option>
+								<option value="yellow">Yellow</option>
+								<option value="purple">Purple</option>
+								<option value="pink">Pink</option>
+								<option value="orange">Orange</option>
+								<option value="black">Black</option>
+							</select>
+							<textarea class="left-input-textarea textarea-animation-element" name="text1" rows="15" cols="50" maxlength="100000000">Paste in here text body 1.</textarea>
+							<textarea class="right-input-textarea textarea-animation-element" name="text2" rows="15" cols="50" maxlength="100000000">Paste in here text body 2.</textarea>
 
-                <select name="color1">
-	        		<option value="red" selected>Red</option>
-	        		<option value="blue">Blue</option>
-	        		<option value="green">Green</option>
-	        		<option value="yellow">Yellow</option>
-	        		<option value="purple">Purple</option>
-	        		<option value="pink">Pink</option>
-	        		<option value="orange">Orange</option>
-	        		<option value="black">Black</option>
-        		</select>
+							<div class = "submit-button-wrapper1">
+								<input type="hidden" name="submit" value="plaintext"></input>
+								<input type ="submit" class="submit-button" value="Submit" name="submittext"></input>
+							</div>
+						</div>
+					</form>
 
-        		 <select name="color2">
-	        		<option value="red">Red</option>
-	        		<option value="blue" selected>Blue</option>
-	        		<option value="green">Green</option>
-	        		<option value="yellow">Yellow</option>
-	        		<option value="purple">Purple</option>
-	        		<option value="pink">Pink</option>
-	        		<option value="orange">Orange</option>
-	        		<option value="black">Black</option>
-        		</select>
-        		
-		        <form action="/" method="POST">
-			        <div class = "submit-button-wrapper3">
-			        	<input type="hidden" name="submit" value="file"></input>
-			        	<input type = "submit" class="submit-button" value="Submit" name="submitfile" id="save"></input>
-			        </div>
-		        </form>
-        	</div>
-        </form> 
-        
-                </div>
-            </div>
-        </div>
-    </section>
+					<form action="/" method="POST">
+						<div class="area-input-textarea" id="twitter">
+							<div class="error">
+								{% if error == 404 %}
+									<p>You entered an invalid or empty Twitter handle. Please check your inputs and try again! (Do not include the @ symbol).
+									</p>
+								{% endif %}
+							</div>
+							<input type="text" name="handle1" placeholder="twitter username 1"></input>
+							<input type="text" name="handle2" placeholder="twitter username 2"></input>
+							
+							<select name="color1">
+								<option value="red" selected>Red</option>
+								<option value="blue">Blue</option>
+								<option value="green">Green</option>
+								<option value="yellow">Yellow</option>
+								<option value="purple">Purple</option>
+								<option value="pink">Pink</option>
+								<option value="orange">Orange</option>
+								<option value="black">Black</option>
+							</select>
 
-    <!-- Services Section -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Services Section</h1>
-                </div>
-            </div>
-        </div>
-    </section>
+							 <select name="color2">
+								<option value="red">Red</option>
+								<option value="blue" selected>Blue</option>
+								<option value="green">Green</option>
+								<option value="yellow">Yellow</option>
+								<option value="purple">Purple</option>
+								<option value="pink">Pink</option>
+								<option value="orange">Orange</option>
+								<option value="black">Black</option>
+							</select>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Contact Section</h1>
-                </div>
-            </div>
-        </div>
-    </section>
+							<form action="/" method="POST">
+								<div class = "submit-button-wrapper2">
+									<input type="hidden" name="submit" value="twitter"></input>
+									<input type = "submit" class="submit-button" value="Submit" name="submittwitter"></input>
+								</div>
+							</form>
+						</div>
+					</form>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+					<form action="/" method="POST" enctype="multipart/form-data">
+						<div class="area-input-textarea" id="file" style="display:none">
+							<div class="error">
+								<p>.txt files only</p>
+							</div>
+							<input type="file" name="file1" required></input>
+							<input type="file" name="file2" required></input>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+							<select name="color1">
+								<option value="red" selected>Red</option>
+								<option value="blue">Blue</option>
+								<option value="green">Green</option>
+								<option value="yellow">Yellow</option>
+								<option value="purple">Purple</option>
+								<option value="pink">Pink</option>
+								<option value="orange">Orange</option>
+								<option value="black">Black</option>
+							</select>
 
-    <!-- Scrolling Nav JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/scrolling-nav.js"></script>
+							 <select name="color2">
+								<option value="red">Red</option>
+								<option value="blue" selected>Blue</option>
+								<option value="green">Green</option>
+								<option value="yellow">Yellow</option>
+								<option value="purple">Purple</option>
+								<option value="pink">Pink</option>
+								<option value="orange">Orange</option>
+								<option value="black">Black</option>
+							</select>
+							
+							<form action="/" method="POST">
+								<div class = "submit-button-wrapper3">
+									<input type="hidden" name="submit" value="file"></input>
+									<input type = "submit" class="submit-button" value="Submit" name="submitfile" id="save"></input>
+								</div>
+							</form>
+						</div>
+					</form> 
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section id="analysis" class="analysis-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Analysis</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Services Section -->
+	<section id="services" class="services-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Services Section</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact Section -->
+	<section id="contact" class="contact-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Contact Section</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+
+	<!-- Scrolling Nav JavaScript -->
+	<script src="js/jquery.easing.min.js"></script>
+	<script src="js/scrolling-nav.js"></script>
 
 </body>
 
-        <!-- <div class="switch-field">
-            <div class="switch-title secondary-text-color">Input Source</div>
-            <div class="switch-buttons">
-            	<input type="radio" id="switch_left" name="switch_2" value="plain" checked/>
-                <label for="switch_left">plaintext</label>
-                <input type="radio" id="switch_right" name="switch_2" value="twitter" />
-                <label for="switch_right">twitter</label>
-                <input type="radio" id="switch_farright" name="switch_2" value="file" />
-                <label for="switch_farright">textfile</label>
-            </div>
-        </div>
 
-        <form action="/" method="POST">
-            <div class="area-input-textarea" id="plain">
-            	<div class="error">
-            		{% if error == 404 %}
-            			<p>You entered an invalid or empty Twitter handle. Please check your inputs and try again!
-            			</p>
-            		{% endif %}
-            	</div>
-            	<select name="color1">
-	        		<option value="red" selected>Red</option>
-	        		<option value="blue">Blue</option>
-	        		<option value="green">Green</option>
-	        		<option value="yellow">Yellow</option>
-	        		<option value="purple">Purple</option>
-	        		<option value="pink">Pink</option>
-	        		<option value="orange">Orange</option>
-	        		<option value="black">Black</option>
-        		</select>
-
-        		 <select name="color2">
-	        		<option value="red">Red</option>
-	        		<option value="blue" selected>Blue</option>
-	        		<option value="green">Green</option>
-	        		<option value="yellow">Yellow</option>
-	        		<option value="purple">Purple</option>
-	        		<option value="pink">Pink</option>
-	        		<option value="orange">Orange</option>
-	        		<option value="black">Black</option>
-        		</select>
-                <textarea class="left-input-textarea textarea-animation-element" name="text1" rows="15" cols="50" maxlength="100000000">Paste in here text body 1.</textarea>
-                <textarea class="right-input-textarea textarea-animation-element" name="text2" rows="15" cols="50" maxlength="100000000">Paste in here text body 2.</textarea>
-
-                <div class = "submit-button-wrapper1">
-                	<input type="hidden" name="submit" value="plaintext"></input>
-                	<input type ="submit" class="submit-button" value="Submit" name="submittext"></input>
-                </div>
-            </div>
-    	</form>
-
-        <form action="/" method="POST">
-            <div class="area-input-textarea" id="twitter">
-            	<div class="error">
-            		{% if error == 404 %}
-            			<p>You entered an invalid or empty Twitter handle. Please check your inputs and try again! (Do not include the @ symbol).
-            			</p>
-            		{% endif %}
-            	</div>
-                <input type="text" name="handle1" placeholder="twitter username 1"></input>
-                <input type="text" name="handle2" placeholder="twitter username 2"></input>
-               	
-               	<select name="color1">
-	        		<option value="red" selected>Red</option>
-	        		<option value="blue">Blue</option>
-	        		<option value="green">Green</option>
-	        		<option value="yellow">Yellow</option>
-	        		<option value="purple">Purple</option>
-	        		<option value="pink">Pink</option>
-	        		<option value="orange">Orange</option>
-	        		<option value="black">Black</option>
-        		</select>
-
-        		 <select name="color2">
-	        		<option value="red">Red</option>
-	        		<option value="blue" selected>Blue</option>
-	        		<option value="green">Green</option>
-	        		<option value="yellow">Yellow</option>
-	        		<option value="purple">Purple</option>
-	        		<option value="pink">Pink</option>
-	        		<option value="orange">Orange</option>
-	        		<option value="black">Black</option>
-        		</select>
-
-		        <form action="/" method="POST">
-			        <div class = "submit-button-wrapper2">
-			        	<input type="hidden" name="submit" value="twitter"></input>
-			        	<input type = "submit" class="submit-button" value="Submit" name="submittwitter"></input>
-			        </div>
-		        </form>
-        	</div>
-        </form>
-
-        <form action="/" method="POST" enctype="multipart/form-data">
-            <div class="area-input-textarea" id="file" style="display:none">
-            	<div class="error">
-            		<p>.txt files only</p>
-            	</div>
-                <input type="file" name="file1" required></input>
-                <input type="file" name="file2" required></input>
-
-                <select name="color1">
-	        		<option value="red" selected>Red</option>
-	        		<option value="blue">Blue</option>
-	        		<option value="green">Green</option>
-	        		<option value="yellow">Yellow</option>
-	        		<option value="purple">Purple</option>
-	        		<option value="pink">Pink</option>
-	        		<option value="orange">Orange</option>
-	        		<option value="black">Black</option>
-        		</select>
-
-        		 <select name="color2">
-	        		<option value="red">Red</option>
-	        		<option value="blue" selected>Blue</option>
-	        		<option value="green">Green</option>
-	        		<option value="yellow">Yellow</option>
-	        		<option value="purple">Purple</option>
-	        		<option value="pink">Pink</option>
-	        		<option value="orange">Orange</option>
-	        		<option value="black">Black</option>
-        		</select>
-        		
-		        <form action="/" method="POST">
-			        <div class = "submit-button-wrapper3">
-			        	<input type="hidden" name="submit" value="file"></input>
-			        	<input type = "submit" class="submit-button" value="Submit" name="submitfile" id="save"></input>
-			        </div>
-		        </form>
-        	</div>
-        </form> -->
-
-    <script type="text/javascript" src="../static/script.js"></script>
-    <script src="../static/bootstrap/js/jquery.easing.min.js"></script>
-    <script src="../static/bootstrap/js/scrolling-nav.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+	<script type="text/javascript" src="../static/script.js"></script>
+	<script src="../static/bootstrap/js/jquery.easing.min.js"></script>
+	<script src="../static/bootstrap/js/scrolling-nav.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
 <!--     </div> -->
 <!-- </body> -->
 
